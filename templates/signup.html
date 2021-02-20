@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>Vaccination Signup</title>
-        </head>
-        <body>
+<!--Here we will extend the base.html template-->
+{% extends "base.html" %}
+{% block title %}Vaccination Form{% endblock %}
+{% block content %}
             <div class="container">
                 <h1>Vaccination Signup</h1>
                 <form action="{{ url_for('signup') }}" method="POST">
@@ -39,5 +36,4 @@
                     <button type="submit">Submit</button>
                 </form>
             </div>
-        </body>
-    </html>
+{% endblock %}

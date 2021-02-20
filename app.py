@@ -1,11 +1,6 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, redirect, url_for, request
 
-# # import WTForms
-# from flask_wtf import FlaskForm
-# from wtforms import StringField
-# import
-
 # create the application object
 app = Flask(__name__)
 
@@ -62,6 +57,7 @@ def portal():
 # start the server with the 'run()' method
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 # To run app, in terminal type:
 # set FLASK_APP=app.py
