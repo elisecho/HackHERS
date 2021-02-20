@@ -66,9 +66,9 @@ if __name__ == '__main__':
 # To run app, in terminal type:
 # set FLASK_APP=app.py
 # set FLASK_ENV=development
-# flask run
+# Flask run
 
 # For Unix/Linux:
 # export FLASK_APP=app.py
 # export FLASK_ENV=development
-# flask run
+# Flask run
