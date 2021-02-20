@@ -8,10 +8,34 @@
             <div class="container">
                 <h1>Vaccination Signup</h1>
                 <form action="{{ url_for('signup') }}" method="POST">
-                    <label>Name</label>
+                    <p>
+                    <label>Name:</label>
                     <input name="name" type="text">
-                    <label>Address</label>
+                    </p>
+                    <p>
+                    <label>Date of Birth:</label>
+                    <input name="dob" type="text">
+                    </p>
+                    <p>
+                    <label>Gender:</label>
+                    <input name="gender" type="text">
+                    </p>
+                    <p>
+                    <label>Occupation:</label>
+                    <input name="occupation" type="text">
+                    </p>
+                    <p>
+                    <label>Address:</label>
                     <input name="address" type="text">
+                    </p>
+                    <p>
+                    <label>Which vaccine are you receiving?:</label>
+                    <input name="dose" type="text">
+                    </p>
+                    <p>
+                    <label>Pick a date:</label>
+                    <input name="date" type="text">
+                    </p>
                     <button type="submit">Submit</button>
                 </form>
             </div>

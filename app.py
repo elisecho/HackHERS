@@ -44,7 +44,12 @@ def signup():
     if request.method == "POST":
         new_signup = {
             "name": request.form["name"],
-            "address": request.form["address"]
+            "dob": request.form["dob"],
+            "gender": request.form["gender"],
+            "occupation": request.form["occupation"],
+            "address": request.form["address"],
+            "dose": request.form["dose"],
+            "date": request.form["date"]
         }
         all_signups.append(new_signup)
         # Once form is submitted send the user back to the homepage
