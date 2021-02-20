@@ -1,5 +1,6 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, redirect, url_for, request
+
 # # import WTForms
 # from flask_wtf import FlaskForm
 # from wtforms import StringField
@@ -8,20 +9,13 @@ from flask import Flask, render_template, redirect, url_for, request
 # create the application object
 app = Flask(__name__)
 
-
 # Create a dictionary where we will house vaccination signups
 all_signups = []
 
 
 # use decorators to link the function to a url
-# Bring user to the index page which houses the list of vaccine signups
-# TODO Vaccine signups should be moved to another page which only the Providers can access
+# Bring user to the welcome page
 @app.route('/')
-def home():
-    return render_template('index.html', signups=all_signups)
-
-
-@app.route('/welcome')
 def welcome():
     return render_template('welcome.html')  # render a template
 
@@ -54,14 +48,20 @@ def signup():
         all_signups.append(new_signup)
         # Once form is submitted send the user back to the homepage
         # TODO Change this to another redirect (Like a page that displays "Form has been submitted!")
-        return redirect(url_for('home'))
+        return redirect(url_for('portal'))
     return render_template('signup.html')
+
+
+# Provider portal houses all the vaccination signups
+# TODO Vaccine signups should be protected so only the Providers can access
+@app.route('/providerportal')
+def portal():
+    return render_template('providerportal.html', signups=all_signups)
 
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
     app.run(debug=True)
-
 
 # To run app, in terminal type:
 # set FLASK_APP=app.py
