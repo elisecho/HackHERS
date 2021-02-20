@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signups</title>
+</head>
+<body>
+<h1>Vaccine Signups</h1>
+    <ul>
+        {% for signup in signups %}
+        <li>{{signup.name}} - {{signup.address}}}/10</li>
+        {% endfor %}
+    </ul>
+<a href="">Add New Signup</a>
+</body>
+</html>

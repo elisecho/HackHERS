@@ -14,9 +14,11 @@ all_signups = []
 
 
 # use decorators to link the function to a url
+# Bring user to the index page which houses the list of vaccine signups
+# TODO Vaccine signups should be moved to another page which only the Providers can access
 @app.route('/')
 def home():
-    return "Covid-19 Vaccination Tracker"  # return a string
+    return render_template('index.html', signups=all_signups)
 
 
 @app.route('/welcome')
@@ -47,10 +49,21 @@ def signup():
         all_signups.append(new_signup)
         # Once form is submitted send the user back to the homepage
         # TODO Change this to another redirect (Like a page that displays "Form has been submitted!")
-        return redirect(url_for('/'))
+        return redirect(url_for('home'))
     return render_template('signup.html')
 
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+# To run app, in terminal type:
+# set FLASK_APP=app.py
+# set FLASK_ENV=development
+# flask run
+
+# For Unix/Linux:
+# export FLASK_APP=app.py
+# export FLASK_ENV=development
+# flask run
