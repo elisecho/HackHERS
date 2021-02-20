@@ -1,11 +1,16 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, redirect, url_for, request
-# import WTForms
-from flask_wtf import FlaskForm
-from wtforms import StringField
+# # import WTForms
+# from flask_wtf import FlaskForm
+# from wtforms import StringField
+# import
 
 # create the application object
 app = Flask(__name__)
+
+
+# Create a dictionary where we will house vaccination signups
+all_signups = []
 
 
 # use decorators to link the function to a url
@@ -32,8 +37,17 @@ def login():
 
 
 # Route to vaccination signup page
-@app.route('/signup')
+@app.route('/signup', methods=["GET", "POST"])
 def signup():
+    if request.method == "POST":
+        new_signup = {
+            "name": request.form["name"],
+            "address": request.form["address"]
+        }
+        all_signups.append(new_signup)
+        # Once form is submitted send the user back to the homepage
+        # TODO Change this to another redirect (Like a page that displays "Form has been submitted!")
+        return redirect(url_for('/'))
     return render_template('signup.html')
 
 
