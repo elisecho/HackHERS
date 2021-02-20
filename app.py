@@ -28,6 +28,12 @@ def login():
     return render_template('login.html', error=error)
 
 
+# Route to vaccination signup page
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
+
+
 # start the server with the 'run()' method
 if __name__ == '__main__':
     app.run(debug=True)
