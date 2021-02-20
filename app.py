@@ -1,5 +1,8 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, redirect, url_for, request
+# import WTForms
+from flask_wtf import FlaskForm
+from wtforms import StringField
 
 # create the application object
 app = Flask(__name__)
