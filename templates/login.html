@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <style>
+      div {
+        background-image: url('static/main_page.jpg');
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+  </style>
+    <title>Flask Intro - login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <style>
+      h1 {text-align: center;}
+      h2{text-align: center;}
+      div {text-align: center;}
+      </style>
+      <br>
+      <h1>Covid-19 Vaccination Tracker</h1>
+      <br>
+      <br>
+      <h2>Login Page</h2>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Username" name="username" value="{{
+          request.form.username }}">
+         <input type="password" placeholder="Password" name="password" value="{{
+          request.form.password }}">
+        <input class="btn btn-default" type="submit" value="Login">
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>
