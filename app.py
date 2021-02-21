@@ -1,5 +1,7 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, redirect, url_for, request
+# import SQLALchemy to hold patient data
+# from flask_sqlalchemy import SQLAlchemy
 
 # create the application object
 app = Flask(__name__)
@@ -23,7 +25,7 @@ def login():
         if request.form['username'] != 'admin' or request.form['password'] != 'test123':
             error = 'Invalid Credentials. Please try again.'
         else:
-            return redirect(url_for('welcome'))
+            return redirect(url_for('portal'))
     return render_template('login.html', error=error)
 
 
@@ -48,10 +50,39 @@ def signup():
 
 
 # Provider portal houses all the vaccination signups
-# TODO Vaccine signups should be protected so only the Providers can access
 @app.route('/providerportal')
 def portal():
     return render_template('providerportal.html', signups=all_signups)
+
+
+# # Create Database
+# app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///new-books-collection.db"
+# # Optional: But it will silence the deprecation warning in the console.
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# db = SQLAlchemy(app)
+#
+#
+# # Create Table
+# class Patient(db.Model):
+#     name = db.Column(db.String(250), primary_key=True)
+#     dob = db.Column(db.String(250), nullable=False)
+#     gender = db.Column(db.String(250), nullable=False)
+#     occupation = db.Column(db.String(250), primary_key=True)
+#     address = db.Column(db.String(250), nullable=False)
+#     dose = db.Column(db.String(250), nullable=False)
+#     date = db.Column(db.String(250), nullable=False)
+#
+#     # Optional: this will allow each object to be identified by its name when printed.
+#     def __repr__(self):
+#         return f'<Patient {self.name}>'
+#
+#
+# db.create_all()
+#
+# # Create record
+# new_patient = Patient(name="Elise", dob="08/07/1990", gender="female", occupation="software engineer", address="123 Test St", dose="first", date="02/25/2021")
+# db.session.add(new_patient)
+# db.session.commit()
 
 
 # start the server with the 'run()' method

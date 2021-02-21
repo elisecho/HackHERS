@@ -2,6 +2,7 @@
 {% extends "base.html" %}
 {% block title %}Provider Portal{% endblock %}
 {% block content %}
+<div class="container">
     <h1>Vaccine Signups</h1>
         <ul>
     <!-- If there are no signups then display "There are no signups" Otherwise, add each signup to a list -->
@@ -15,4 +16,5 @@
         </ul>
     <!-- Offer a link to add a new vaccination signup -->
     <a href="{{ url_for('signup') }}">Add New Signup</a>
+</div>
 {% endblock %}

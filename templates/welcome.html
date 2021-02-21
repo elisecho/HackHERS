@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Flask Intro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
-  </head>
-  <body>
+<!--Here we will extend the base.html template-->
+{% extends "base.html" %}
+{% block title %}Vaccination Form{% endblock %}
+{% block content %}
     <div class="container">
-      <style>
-      h1 {text-align: center;}
-      </style>
-      <br>
-      <h1>Vaccination Tracker Home Page</h1>
-      <br>
-      <div class="text-center">
-      <a class="btn btn-primary" href="signup" role="button">Signup for Vaccination</a>
-      <a class="btn btn-primary" href="login" role="button">Provider Portal</a>
+        <style>
+        h1 {text-align: center;}
+        </style>
+        <br>
+        <h1>Vaccination Tracker Home Page</h1>
+        <br>
+        <div class="text-center">
+        <a class="btn btn-primary" href="signup" role="button">Signup for Vaccination</a>
+        <a class="btn btn-primary" href="login" role="button">Provider Portal</a>
+        </div>
       </div>
-    </div>
-  </body>
-</html>
+{% endblock %}
