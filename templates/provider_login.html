@@ -2,9 +2,9 @@
   <head>
     <style>
       div {
-        background-image: url('static/main_page.jpg');
-        height: 100%;
-        background-position: stretch;
+        background-image: url('static/hc.jpg');
+        height: 90%;
+        background-position: strech;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -16,15 +16,15 @@
   <body>
     <div class="container">
       <style>
-      h1 {text-align: center;}
+      h1 {text-align: center}
       h2{text-align: center;}
       div {text-align: center;}
       </style>
       <br>
-      <h1 style="color:white">Covid-19 Vaccination Tracker</h1>
+      <h1 style="color:white">Covid-19 Vaccination Tracker: Admin Login Page</h1>
       <br>
       <br>
-      <h2 style="color:white">Login Page</h2>
+      <!-- <h2 style="color:white">Admin Login Page</h2> -->
       <br>
       <form action="" method="post">
         <input type="text" placeholder="Username" name="username" value="{{
@@ -34,7 +34,9 @@
           <br>
           <br>
         <input class="btn btn-default" style="color:white" type="submit" value="Login">
+        <!-- <li class="nav-item"> -->
           <p><a href="/checkuser">Return to Home Page</a></p>
+        <!-- </li> -->
       </form>
       {% if error %}
         <p class="error"><strong>Error:</strong> {{ error }}
